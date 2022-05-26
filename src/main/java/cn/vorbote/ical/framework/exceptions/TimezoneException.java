@@ -1,4 +1,4 @@
-package cn.vorbote.ical.framework;
+package cn.vorbote.ical.framework.exceptions;
 
 /**
  * TimezoneException<br>
