@@ -10,7 +10,7 @@ public final class CalEvent extends CalNode {
     public String export() {
         var builder = new StringBuilder();
         builder.append("BEGIN:VEVENT\n");
-        builder.append("UID:19970901T130000Z-123401@example.com");
+        builder.append("UID:" + uid + "@" + groupId);
 
         return builder.toString();
     }

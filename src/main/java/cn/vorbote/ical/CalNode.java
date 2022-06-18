@@ -19,7 +19,7 @@ public abstract class CalNode {
     /**
      * Timezone of this data node.
      */
-    private String timezone;
+    protected String timezone;
 
     /**
      * This property is used to specify categories or subtypes of the calendar component. The categories are
@@ -41,7 +41,7 @@ public abstract class CalNode {
      *     </li>
      * </ul>
      */
-    private List<String> categories;
+    protected List<String> categories;
 
     /**
      * An access classification is only one component of the general security system within a calendar
@@ -55,9 +55,9 @@ public abstract class CalNode {
      * Rather, they provide a method for capturing the intention of the calendar owner for the access to the
      * calendar component. If not specified in a component that allows this property, the default value is
      * PUBLIC. Applications MUST treat x-name and iana-token values they don't recognize the same way as
-     * they would the PRIVATE value.
+     * they would the protected value.
      */
-    private CalPrivacy privacy;
+    protected CalPrivacy privacy;
 
     /**
      * This property is used to specify a comment to the calendar user.
@@ -68,13 +68,13 @@ public abstract class CalNode {
      * As a matter of fact\, the venue for the meeting ought to be at
      * their site. - - John</pre>
      */
-    private String comment;
+    protected String comment;
 
     /**
      * This property provides a more complete description of the calendar component than that provided by
      * the "SUMMARY" property.
      */
-    private String description;
+    protected String description;
 
     /**
      * This property value specifies latitude and longitude, in that order (i.e., "LAT LON" ordering). The
@@ -109,7 +109,7 @@ public abstract class CalNode {
      * The simple formula for converting degrees-minutes-seconds into decimal degrees is:
      * <code>decimal = degrees + minutes/60 + seconds/3600</code>.
      */
-    private Coordinate geo;
+    protected Coordinate geo;
 
     /**
      * Specific venues such as conference or meeting rooms may be explicitly specified using this property.
@@ -118,7 +118,7 @@ public abstract class CalNode {
      * either an LDAP URL [RFC4516] pointing to an LDAP server entry or a CID URL [RFC2392] pointing to a
      * MIME body part containing a Virtual-Information Card (vCard) [RFC2426] for the location.
      */
-    private String location;
+    protected String location;
 
     /**
      * The property value is a positive integer between 0 and 100. A value of "0" indicates the to-do has
@@ -131,7 +131,7 @@ public abstract class CalNode {
      * that "A" has completed 70% of the to-do assigned to them. A reply from "B" with a percent complete of
      * "50" indicates "B" has completed 50% of the to-do assigned to them.
      */
-    private Integer percentComplete;
+    protected Integer percentComplete;
 
     /**
      * This priority is specified as an integer in the range 0 to 9. A value of 0 specifies an undefined
@@ -144,13 +144,13 @@ public abstract class CalNode {
      *
      * You could use constant values in {@link cn.vorbote.ical.framework.constants.CalPriority}.
      */
-    private Integer priority;
+    protected Integer priority;
 
     /**
      * The property value is an arbitrary text. More than one resource can be specified as a COMMA-separated list of
      * resources.
      */
-    private List<String> resources;
+    protected List<String> resources;
 
     /**
      * In a group-scheduled calendar component, the property is used by the "Organizer" to provide a confirmation of
@@ -177,13 +177,13 @@ public abstract class CalNode {
      *     <li><b>"CANCELLED"</b> - Indicates to-do was cancelled.</li>
      * </ul>
      */
-    private String status;
+    protected String status;
 
     /**
      * This property is used in the "VEVENT", "VTODO", and "VJOURNAL" calendar components to capture a short, one-line
      * summary about the activity or journal entry.
      */
-    private String summary;
+    protected String summary;
 
     /**
      * This property defines the date and time that a to-do was actually completed.<br>
@@ -191,7 +191,7 @@ public abstract class CalNode {
      * Example:
      * <code>COMPLETED:19960401T150000Z</code>
      */
-    private DateTime completed;
+    protected DateTime completed;
 
     /**
      * Within the "VEVENT" calendar component, this property defines the date and time by which the event ends. The
@@ -199,7 +199,7 @@ public abstract class CalNode {
      * the value of the "DTSTART" property. Furthermore, this property MUST be specified as a date with local time if
      * and only if the "DTSTART" property is also specified as a date with local time.
      */
-    private DateTime end;
+    protected DateTime end;
 
     /**
      * This property defines the date and time before which a to-do is expected to be completed. For cases where this
@@ -211,7 +211,7 @@ public abstract class CalNode {
      * Example:
      * <code>DUE:19980430T000000Z</code>
      */
-    private DateTime due;
+    protected DateTime due;
 
     /**
      * Within the "VEVENT" calendar component, this property defines the start date and time for the event.<br>
@@ -219,7 +219,7 @@ public abstract class CalNode {
      * Example:
      * <code>DTSTART:19980118T073000Z</code>
      */
-    private DateTime start;
+    protected DateTime start;
 
     /**
      * In a "VEVENT" calendar component the property may be used to specify a duration of the event, instead of an
@@ -235,7 +235,7 @@ public abstract class CalNode {
      *     <li><code>DURATION:PT15M</code></li>
      * </ul>
      */
-    private TimeSpan duration;
+    protected TimeSpan duration;
 
     /**
      * Time Transparency is the characteristic of an event that determines whether it appears to consume time on a
@@ -256,7 +256,7 @@ public abstract class CalNode {
      *     <li><code>TRANSP:OPAQUE</code></li>
      * </ul>
      */
-    private String transparency;
+    protected String transparency;
 
     /**
      * This property MUST only be specified within calendar components to specify participants, non-participants, and
@@ -280,7 +280,7 @@ public abstract class CalNode {
      *
      * Multiple attendees can be specified by including multiple "ATTENDEE" properties within the calendar component.<br>
      */
-    private List<Attendee> attendees;
+    protected List<Attendee> attendees;
 
     /**
      * This property may be used in a calendar component to convey a location where a more dynamic rendition of the
@@ -288,7 +288,7 @@ public abstract class CalNode {
      * standardize the form of the URI, nor the format of the resource pointed to by the property value. If the URL
      * property and Content-Location MIME header are both specified, they MUST point to the same resource.
      */
-    private String url;
+    protected String url;
 
     /**
      * The "UID" itself MUST be a globally unique identifier. The generator of the identifier MUST guarantee that the
@@ -303,7 +303,7 @@ public abstract class CalNode {
      * host itself or otherwise) such that the generator of the message identifier can guarantee the uniqueness of the
      * left-hand side within the scope of that domain.
      */
-    private String uid;
+    protected String uid;
 
     /**
      * The exception dates, if specified, are used in computing the recurrence set. The recurrence set is the complete
@@ -322,9 +322,9 @@ public abstract class CalNode {
      * original "DTSTART" date MUST still be maintained by the calendaring and scheduling system because the original
      * "DTSTART" value has inherent usage dependencies by other properties such as the "RECURRENCE-ID".<br/>
      */
-    private List<DateTime> exceptDate;
+    protected List<DateTime> exceptDate;
 
-    private String groupId;
+    protected String groupId;
 
     /**
      * Set the group id for each data node.
@@ -349,7 +349,7 @@ public abstract class CalNode {
      *  DTSTART:19970903T163000Z
      *  DTEND:19970903T190000Z
      *  SUMMARY:Annual Employee Review
-     *  CLASS:PRIVATE
+     *  CLASS:protected
      *  CATEGORIES:BUSINESS,HUMAN RESOURCES
      *  END:VEVENT</pre>
      *
